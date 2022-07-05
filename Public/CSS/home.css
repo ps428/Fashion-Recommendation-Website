@@ -16,7 +16,7 @@ body {
 }
 
 .topbar {
-  height: 14%;
+  height: 95px;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -98,7 +98,7 @@ li a:hover {
   padding-right: 8%;
 }
 
-.recommendedproducts {
+.itemsContainer {
   padding: 20px;
 }
 

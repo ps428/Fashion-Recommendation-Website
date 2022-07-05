@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/home.css">
-  <script src="../JS/home.js"></script>
+  <script src="../JS/apiDealing.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   </script>
@@ -36,161 +36,79 @@
       <br><br>
       <label for="password">Password:</label>
       <input type="password" id="password" name="Password">
-      <button onclick="sendUserID()">Submit</button>
+      <button onclick="sendUserID('1')">Submit</button>
     </div>
 
-    <div class="charts">
-      <div class="chart">
-        <canvas id="productChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
-      </div>
+    <div class="charts" id="userCharts">
+   <!-- delete from here -->
       <div class="chart">
         <canvas id="categoryChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
       </div>
+      <div class="chart">
+        <canvas id="artistChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
+      </div>
+   <!-- delete till here -->
     </div>
 
 
-    <div class="recommendedproducts" style="margin-top: 80px;"></div>
+    <div class="itemsContainer" style="margin-top: 80px;"></div>
     <hr>
     <div class="flexHeader">
       Recommended Products
     </div>
-    <div class="flex-container">
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
+    <div class="flex-container" id="recommendedProducts">
+   <!-- delete from here -->
+   
+   <!-- delete till here -->
 
     </div>
 
-    <div class="recommendedproducts"></div>
+    <div class="itemsContainer"></div>
     <hr>
     <div class="flexHeader">
       Previous Purchases
     </div>
-    <div class="flex-container">
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
+    <div class="flex-container" id="userProducts">
+   <!-- delete from here -->
+   <div class="productCard" id="product1">
+    <div class="productImg">
+      <img src="/home/pranav/Desktop/Github/FashionRecommendation/product_imgs/Cap.jpeg">
+    </div>
+    <div class="productId">1</div>
+    <div class="productTitle">The Big Bang Theory | Cap </div>
+  </div>
 
+  <div class="productCard" id="product2">
+    <div class="productImg">
+      <img src="/home/pranav/Desktop/Github/FashionRecommendation/product_imgs/Jacket.jpeg">
+    </div>
+    <div class="productId">2</div>
+    <div class="productTitle">The Big Bang Theory | Jacket </div>
+  </div>
+
+  <div class="productCard" id="product3">
+    <div class="productImg">
+      <img src="/home/pranav/Desktop/Github/FashionRecommendation/product_imgs/Shoes.jpeg">
+    </div>
+    <div class="productId">3</div>
+    <div class="productTitle">The Big Bang Theory | Shoes </div>
+  </div>
+
+  <div class="productCard" id="product4">
+    <div class="productImg">
+      <img src="/home/pranav/Desktop/Github/FashionRecommendation/product_imgs/Cap.jpeg">
+    </div>
+    <div class="productId">4</div>
+    <div class="productTitle">Captain America | Cap </div>
+  </div>
+
+  <div class="productCard" id="product5">
+    <div class="productImg">
+      <img src="/home/pranav/Desktop/Github/FashionRecommendation/product_imgs/Hoodie.jpeg">
+    </div>
+    <div class="productId">5</div>
+    <div class="productTitle">The Big Bang Theory | Hoodie </div>
+  </div>     <!-- delete till here -->
     </div>
 
   </div>
