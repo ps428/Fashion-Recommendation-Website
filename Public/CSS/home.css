@@ -34,7 +34,7 @@ body {
   font-size: 25px;
   color: #767676;
   display: block;
-  margin-left: 10px;
+  margin-left: 20px;
   align-items: center;
 }
 
@@ -42,6 +42,18 @@ body {
   vertical-align: middle;
   height: 60px;
   display: flex;
+}
+
+.logo{
+  height: 100%;
+  display:  flex;
+  justify-content:center;
+}
+
+.logo > img{
+  margin-top: 15px;
+  margin-left: 15px;
+  height: 55%;
 }
 
 ul {
@@ -196,7 +208,7 @@ input {
   width: 95%;
 }
 
-img {
+.productImg > img {
   width: 100%;
   /* or any custom size */
   height: 100%;

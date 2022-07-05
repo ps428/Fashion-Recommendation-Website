@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import json
 from sqlalchemy import create_engine
 from apis.fetch_visualize_user_data import get_all_charts, get_userid, get_piecharts_data
-from apis.fetch_user_recommendations import get_user_recommendations, fetch_user_purchased_products
+from apis.fetch_user_recommendations import get_user_recommendations, fetch_user_purchased_products, get_user_ids
 from apis.TopN import get_topN_products,get_topN_attributes
 from apis.product_trend import get_trend, get_product_trend
 from flask_cors import CORS, cross_origin
@@ -87,6 +87,9 @@ def user_personalization():
             #return json_dict
         elif functionality=='get_user_products':
             response=fetch_user_purchased_products(user_id)
+            return json.dumps(response)
+        elif functionality=='get_user_ids':
+            response=get_user_ids()
             return json.dumps(response)
         else:
             return 'Invalid request!'

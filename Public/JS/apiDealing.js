@@ -1,5 +1,6 @@
 const pwd = "/home/pranav/Desktop/Github/FashionRecommendation/product_imgs"
 
+
 function makeItemUser(imageName, productID, productArtist, productCategory, productNumber) {
   //can customize the path of image from here
   const imagePath = pwd + '/' + imageName;
@@ -219,6 +220,29 @@ function sendUserID(typeOfData, productID = "") {
       }
       endpoint = "http://localhost:8000/personalization";
       let username = document.getElementById("username").value;
+
+      //todo
+      //get all user ids
+      // fetchRes = fetch(endpoint, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Accept': 'application/json',
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify({
+      //     "func": "get_user_ids",
+      //     "username": username.toString()
+      //   })
+      // })
+
+      // // fetchRes is the promise to resolve
+      // // it by using.then() method
+      // // .then(data=>{ console.log(data); })
+
+      // fetchRes.then(res => res.json()).then((data) => {
+      //   console.log(data)        
+      // })
+
 
       // API for get requests
       fetchRes = fetch(endpoint, {

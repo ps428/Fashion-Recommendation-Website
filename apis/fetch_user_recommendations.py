@@ -16,6 +16,20 @@ engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}"
 
 #app = Flask(__name__)
 
+def get_user_ids():
+    user_query=f"""
+                select user_id from users;
+               """
+    user_id_array = pd.read_sql(
+                        user_query,
+                        con=engine)
+    if user_id_array.empty:
+        raise ValueError("Some error")
+    else:
+        print(user_id_array)
+        return user_id_array
+
+
 def get_user_scores_with_products(user_id):
     user_query=f"""
                 select * from user_product_interact_score where user_id={user_id};
