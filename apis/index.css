@@ -1,0 +1,9 @@
+div {
+    display: block;
+    float: left;
+}
+
+.container {
+    display: flex;
+}
+
