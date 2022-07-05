@@ -2,7 +2,7 @@
   --navbg: #0a0a23;
   --bg1: #ece9e9;
   --bg2: #fff;
-  --bg3: #aaaeab;
+  --bg3: white;
   --text1: black;
   --text2: #333;
 }
@@ -12,44 +12,50 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--bg2);
+  background-color: var(--bg3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .topbar {
-  height: 95px;
+  height: 60px;
   width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
-  background-color: var(--navbg);
+  background-color: white;
   overflow-x: hidden;
-  padding-top: 5px;
+  align-items: center;
+  vertical-align: middle;
+  /* padding-top: 5px; */
 }
-
 
 .topbarHeading {
   /* text-align: center; */
-  text-decoration: none;
   font-size: 25px;
-  color: white;
+  color: #767676;
   display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
   margin-left: 10px;
+  align-items: center;
 }
 
+.right {
+  vertical-align: middle;
+  height: 60px;
+  display: flex;
+}
 
 ul {
   list-style-type: none;
+  align-items: center;
   margin: 0;
+  margin-left: auto;
   padding: 0;
   overflow: hidden;
-  background-color: var(--navbg);
-  color: white;
+  /* background-color: var(--navbg); */
+  display: flex;
 }
 
 li {
-  float:left;
   padding-left: 10px;
 }
 
@@ -59,36 +65,104 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 16px;
-  color: white;
+  color: #767676;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #5c5e62;
-  color: rgba(238, 238, 36, 0.667);
-  font-size: 18px;
-  border-radius: 20px;
-     -webkit-border-radius: 20px;
-     -moz-border-radius: 20px;
-     -o-border-radius: 20px;
+  color: rgb(255, 72, 0);
+
 }
 
-.active{
-  background-color: #5c5e62;
-  color: orange;
-  border-radius: 20px;
-     -webkit-border-radius: 20px;
-     -moz-border-radius: 20px;
-     -o-border-radius: 20px;
+.active {
+  color: rgb(255, 72, 0);
+}
+
+.seperator {
+  height: 1px;
+  width: 100%;
+  background-color: rgb(255, 72, 0);
+  margin-top: 60px;
+  position: absolute;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  box-shadow: 0 1px 6px 0 rgb(249, 99, 40);
+
+}
+
+.form {
+  background-color: var(--bg3);
+  display: flex;
+  position: inherit;
+  margin-top: 20px;
+}
+
+.form>label {
+  color: var(--text2);
+  margin: 5px;
+  margin-left: 30px;
+}
+
+.form>input {
+  width: 200px;
+  margin-right: 30px;
+  height: 28px;
+}
+
+.form>button {
+  margin-left: 30px;
+}
+
+button {
+  border: 1px solid #ccc;
+  color: rgb(255, 72, 0);
+  background-color: white;
+  outline: none;
+}
+
+input {
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+.chartHeader {
+  text-decoration: underline !important;
+  text-decoration-color: rgb(255, 72, 0) !important;
+  text-decoration-thickness: 0.5px !important;
+  margin-top: 105px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  color: #767676;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.chart {
+  height: 240px;
+  width: 440px;
+  /* margin-top: 30px; */
+  margin-bottom: 30px;
+  padding-left: 60px;
+  /* padding-right: 60px; */
+}
+
+.charts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .main {
-  margin-top: 6.69%;
+  margin-top: 62px;
+  width: 100%;
   /* Same as the width of the sidebar */
   /* Same as the width of the sidebar */
-  padding: 0px 10px;
   position: absolute;
-  background-color: var(--bg2);
+  background-color: var(--bg3);
 }
 
 .flex-container {
@@ -98,10 +172,6 @@ li a:hover {
   padding-right: 8%;
 }
 
-.itemsContainer {
-  padding: 20px;
-}
-
 .productCard {
   /* border-radius: 10px 50px; */
   border-radius: 5px;
@@ -109,17 +179,29 @@ li a:hover {
   margin: 5px;
   margin-bottom: 15px;
   height: 240px;
-  width: 200px;
+  width: 170px;
   background-color: var(--bg2);
   /* box-shadow: 2px 2px 1px 2px; */
   border: 2px solid #ddd;
 
 }
 
-.productImg{
-  max-height: 70%;
-  max-width: 70%;
-  object-fit: contain}
+.productCard {
+  align-items: center;
+  justify-content: center;
+}
+
+.productImg {
+  height: 80%;
+  width: 95%;
+}
+
+img {
+  width: 100%;
+  /* or any custom size */
+  height: 100%;
+  object-fit: contain;
+}
 
 .productId {
   margin-top: 20px;
@@ -137,52 +219,77 @@ li a:hover {
   word-wrap: break-word;
 }
 
+.productQuantity{
+  text-decoration: none;
+  font-size: 10px;
+  color: var(--text2);
+  display: block;
+}
+
 .flexHeader {
+  text-decoration: underline !important;
+  text-decoration-color: rgb(255, 72, 0) !important;
+  text-decoration-thickness: 0.5px !important;
   text-align: center;
   text-decoration: none;
-  font-size: 30px;
-  color: black;
+  font-size: 25px;
+  color: #767676;
   display: block;
-  padding: 8px;
-  margin-top: 4px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  /* padding: 20px; */
 }
 
-.form {
-  background-color: var(--bg1);
-  border-radius: 20px;
-  box-sizing: border-box;
-  height: 160px;
+.noElements {
+  text-align: center;
+}
+
+
+.undeline {
+  height: 1px;
+  width: 40px;
+  background-color: rgb(255, 72, 0);
+  margin-left: 48.5%;
+  margin-bottom: 30px;
+}
+
+.table{
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  min-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table th {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.table tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.description{
+  text-align: center;
   padding: 20px;
-  width: 320px;
-  margin-left: 1%;
-  position: inherit;
-  margin-top: 40px;
-}
-
-.form>label {
-  color: var(--text2);
-  margin: 5px;
-}
-
-.form>input {
-  width: 70%;
-}
-
-.form>button {
-  margin-left: 80%;
-  margin-top: 4%;
-}
-
-.chart {
-  height: 240px;
-  width: 240px;
-  margin-top: 240px;
-  padding-left:60px ;
-  padding-right:60px ;
-}
-
-.charts {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

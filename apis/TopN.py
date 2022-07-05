@@ -10,9 +10,9 @@ from sqlalchemy import create_engine
 #Caution: Do not keep special characters in password or db name 
 
 engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}"
-                       .format(user="root",
-                        pw="span%40123",    #real password is span@123, but url encoded password is required
-                        db="Fashion_db"))
+                       .format(user="nodejs",
+                        pw="mysql",    #real password is span@123, but url encoded password is required
+                        db="fashionDB"))
 
 app = Flask(__name__)
 

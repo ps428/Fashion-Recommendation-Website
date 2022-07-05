@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/home.css">
-  <script src="../JS/home.js"></script>
+  <script src="../JS/apiDealing.js"></script>
 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   </script>
 
@@ -16,182 +17,34 @@
 
 <body>
   <div class="topbar">
-    <div class="headBars">
 
-      <div class="topbarHeading">Fashion Recommendation</div>
-      
+    <div class="right">
+      <h1 class="topbarHeading">Fashion Recommendation</h1>
       <ul>
         <li><a href="../HTML/home.html">Home</a></li>
         <li><a href="../HTML/website_trends.html">Website Trends</a></li>
         <li><a class="active" href="../HTML/product_trends.html">Product Trends</a></li>
         <li><a href="../HTML/about.html">About</a></li>
-      </ul></div>
-
+      </ul>
+    </div>
   </div>
+
+  <div class="seperator"></div>
   <div class="main">
     <div class="form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="Username"><br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="Password">
-      <button>Submit</button>
+      <label for="product_id">Product ID</label>
+      <input type="text" id="product_id" name="product_id" placeholder="Product ID">
+      <button onclick="sendUserID('3',document.getElementById('product_id').value)">Submit</button>
     </div>
 
-    <div class="charts">
-      <div class="chart">
-        <canvas id="productChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
-      </div>
-      <div class="chart">
-        <canvas id="categoryChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
-      </div>
+    <div class="chartHeader">
+      Product Statistics
+    </div>
+    <div class="charts" id="userCharts">
+      <!-- delete from here -->
+      <!-- delete till here -->
     </div>
 
-
-    <div class="recommendedproducts" style="margin-top: 80px;"></div>
-    <hr>
-    <div class="flexHeader">
-      Recommended Products
-    </div>
-    <div class="flex-container">
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-
-    </div>
-
-    <div class="recommendedproducts"></div>
-    <hr>
-    <div class="flexHeader">
-      Previous Purchases
-    </div>
-    <div class="flex-container">
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-      <div class="productCard">
-        <div class="productImg">
-          <img src="../../product_imgs/Cap.jpeg">
-        </div>
-        <div class="productId">Product ID</div>
-        <div class="productTitle">Product Artist | Product Category </div>
-      </div>
-
-    </div>
-
-  </div>
   </div>
 
 </body>
