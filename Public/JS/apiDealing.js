@@ -198,6 +198,7 @@ function makeChartProductTrends(jsonData) {
     }
   });
 }
+
 /*
  * @param {String} typeOfData
  '1': get_all_charts, get_user_recommendations, get_user_products
@@ -219,31 +220,34 @@ function sendUserID(typeOfData, productID = "") {
         noElements[0].parentElement.removeChild(noElements[0]);
       }
       endpoint = "http://localhost:8000/personalization";
-      let username = document.getElementById("username").value;
+      let username = document.getElementById("usernameDropDown").value;
+      console.log(username)
+     if(username=="Select Username"){
+      //set all values to null
+      document.getElementById('userCharts').style.height = '0px';
+      document.getElementById('userCharts').innerHTML = ''
+      document.getElementById('recommendedProducts').innerHTML = ''
+      document.getElementById('userProducts').innerHTML = ''
 
-      //todo
-      //get all user ids
-      // fetchRes = fetch(endpoint, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Accept': 'application/json',
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify({
-      //     "func": "get_user_ids",
-      //     "username": username.toString()
-      //   })
-      // })
+      //display null error on page
+      let errorMessage1 = document.createElement('div')
+      errorMessage1.className = 'noElements'
+      errorMessage1.innerHTML = 'NO RECORDS TO SHOW'
 
-      // // fetchRes is the promise to resolve
-      // // it by using.then() method
-      // // .then(data=>{ console.log(data); })
+      let errorMessage2 = document.createElement('div')
+      errorMessage2.className = 'noElements'
+      errorMessage2.innerHTML = 'NO RECORDS TO SHOW'
 
-      // fetchRes.then(res => res.json()).then((data) => {
-      //   console.log(data)        
-      // })
+      let errorMessage3 = document.createElement('div')
+      errorMessage3.className = 'noElements'
+      errorMessage3.innerHTML = 'NO RECORDS TO SHOW'
 
+      document.getElementsByClassName('errorOuter')[0].appendChild(errorMessage1)
+      document.getElementsByClassName('errorOuter')[1].appendChild(errorMessage2)
+      document.getElementsByClassName('errorOuter')[2].appendChild(errorMessage3)
 
+      return;
+     }
       // API for get requests
       fetchRes = fetch(endpoint, {
         method: 'POST',
@@ -364,7 +368,6 @@ function sendUserID(typeOfData, productID = "") {
         <table class="table">
           <tr>
             <th>S.No</th>
-            <th>Artist ID</th>
             <th>Artist Name</th>
             <th>Total Quantity</th>
           </tr>
@@ -376,7 +379,6 @@ function sendUserID(typeOfData, productID = "") {
           `
           <tr>
             <td>${i+1}</td>
-            <td>${artistData[i].artist_id}</td>
             <td>${artistData[i].artist}</td>
             <td>${artistData[i].total_quantity}</td>
           </tr>
@@ -390,7 +392,6 @@ function sendUserID(typeOfData, productID = "") {
         <table class="table">
           <tr>
             <th>S.No</th>
-            <th>Category ID</th>
             <th>Category Name</th>
             <th>Total Quantity</th>
           </tr>
@@ -402,7 +403,6 @@ function sendUserID(typeOfData, productID = "") {
           `
           <tr>
             <td>${i+1}</td>
-            <td>${categoryData[i].category_id}</td>
             <td>${categoryData[i].category}</td>
             <td>${categoryData[i].total_quantity}</td>
           </tr>

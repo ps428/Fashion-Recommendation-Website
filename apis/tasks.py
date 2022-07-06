@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 import json
 from sqlalchemy import create_engine
 from apis.fetch_visualize_user_data import get_all_charts, get_userid, get_piecharts_data
-from apis.fetch_user_recommendations import get_user_recommendations, fetch_user_purchased_products, get_user_ids
+from apis.fetch_user_recommendations import get_user_recommendations, fetch_user_purchased_products, get_usernames
 from apis.TopN import get_topN_products,get_topN_attributes
-from apis.product_trend import get_trend, get_product_trend
+from apis.product_trend import get_trend, get_product_trend, get_product_names
 from flask_cors import CORS, cross_origin
 
 # create sqlalchemy engine and connect to local database
@@ -88,8 +88,10 @@ def user_personalization():
         elif functionality=='get_user_products':
             response=fetch_user_purchased_products(user_id)
             return json.dumps(response)
-        elif functionality=='get_user_ids':
-            response=get_user_ids()
+        elif functionality=='get_usernames':
+            print("getting all usernames")
+            response=get_usernames()
+            print(type(response))
             return json.dumps(response)
         else:
             return 'Invalid request!'
@@ -309,3 +311,86 @@ def about_project():
 def client():
     ip_addr = request.environ['REMOTE_ADDR']
     return '<h1> Your IP address is:' + ip_addr
+
+
+@app.route('/home', methods=['POST'])
+def get_usernames_route():
+    """
+    request format:
+    {
+        "func":"get_usernames" 
+    }
+
+    response format:
+    for func="get_usernamess"
+    [{
+        "index": int,
+        "username": string,
+     },
+     {
+        "index": int,
+        "username": string,
+     },
+        so on... all usernames
+    ]
+    """
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json_dict = request.json
+        functionality=json_dict['func']
+        #user_id=int(json_dict['user_id'])
+
+        if functionality=='get_usernames':  
+            #response_dict={'title':'Top Products'}
+            #response_dict['data']=get_topN_products(N=5)
+            response=get_usernames()
+            #return json.dumps(response_dict)
+            return json.dumps(response)
+        else:
+            return 'Invalid request!'
+
+    else:
+       return 'Content-Type not supported!'
+
+
+@app.route('/productData', methods=['POST'])
+def get_all_product_names():
+    # print("getting products")
+    """
+    request format:
+    {
+        "func":"get_products" 
+    }
+
+    response format:
+    for func="get_product_names"
+    [{
+        "index": int,
+        "product_name": string,
+        "product_id": int,
+     },
+     {
+        "index": int,
+        "product_name": string,
+        "product_id": int,
+     },
+        so on... all products
+    ]
+    """
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json_dict = request.json
+        functionality=json_dict['func']
+        #user_id=int(json_dict['user_id'])
+
+        if functionality=='get_products':  
+            #response_dict={'title':'Top Products'}
+            #response_dict['data']=get_topN_products(N=5)
+            response=get_product_names()
+            #return json.dumps(response_dict)
+            return json.dumps(response)
+        else:
+            return 'Invalid request!'
+
+    else:
+       return 'Content-Type not supported!'

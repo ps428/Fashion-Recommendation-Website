@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/home.css">
   <script src="../JS/apiDealing.js"></script>
+  <script src="../JS/home.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
@@ -34,11 +35,15 @@
 
   <div class="seperator"></div>
   <div class="main">
+
     <div class="form">
-      <label for="username">Username</label>
+      <select id="usernameDropDown">
+        <option selected="selected">Select Username</option>
+      </select>
+      <!-- <label for="username">Username</label>
       <input type="text" id="username" name="Username" placeholder="Username">
       <label for="password" style="display:none">Password</label>
-      <input type="password" style="display:none" id="password" name="Password" placeholder="Password">
+      <input type="password" style="display:none" id="password" name="Password" placeholder="Password"> -->
       <button onclick="sendUserID('1')">Submit</button>
     </div>
 
@@ -49,18 +54,23 @@
       <!-- delete from here -->
       <!-- delete till here -->
     </div>
-    <div class="noElements">
-      NO RECORDS TO SHOW
+    <div class="errorOuter">
+      <div class="noElements">
+        NO RECORDS TO SHOW
+      </div>
     </div>
 
     <!-- <hr style="border-color: rgb(255, 72, 0); border-width: 0.5px;"> -->
     <div class="flexHeader">
       Recommended Products
     </div>
-
-    <div class="noElements">
-      NO RECORDS TO SHOW
+    
+    <div class="errorOuter">
+      <div class="noElements">
+        NO RECORDS TO SHOW
+      </div>
     </div>
+
     <div class="flex-container" id="recommendedProducts">
       <!-- delete from here -->
       <!-- delete till here -->
@@ -71,10 +81,12 @@
       Previous Purchases
     </div>
 
-    <div class="noElements">
-      NO RECORDS TO SHOW
+    <div class="errorOuter">
+      <div class="noElements">
+        NO RECORDS TO SHOW
+      </div>
     </div>
-    <div class="flex-container" id="userProducts">
+ <div class="flex-container" id="userProducts">
       <!-- delete from here -->
       <!-- delete till here -->
     </div>

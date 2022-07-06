@@ -15,6 +15,23 @@ engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}"
 
 #app = Flask(__name__)
 
+def get_product_names():
+    products_query=f"""
+        select Concat(category, ' ',artist, ' ',theme) as product_name, product_id 
+        from 
+        products_detail;
+    """
+
+    products_data = pd.read_sql(
+                        products_query,
+                        con=engine)
+
+    # print(products_data)
+    json_products_array = products_data.to_json(orient ='split')
+    # print((json_products_array))
+    return json_products_array
+
+
 def fetch_product_orders(prod_id):
     orders_query=f"""
     select order_id,

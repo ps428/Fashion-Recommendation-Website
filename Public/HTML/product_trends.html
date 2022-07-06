@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/home.css">
   <script src="../JS/apiDealing.js"></script>
+  <script src="../JS/productTrends.js"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
@@ -36,9 +37,10 @@
   <div class="seperator"></div>
   <div class="main">
     <div class="form">
-      <label for="product_id">Product ID</label>
-      <input type="text" id="product_id" name="product_id" placeholder="Product ID">
-      <button onclick="sendUserID('3',document.getElementById('product_id').value)">Submit</button>
+      <select id="productsDropDown">
+        <option selected="selected">Select Product</option>
+      </select>
+      <button onclick="makeChart()">Submit</button>
     </div>
 
     <div class="chartHeader">
@@ -48,6 +50,12 @@
       <!-- delete from here -->
       <!-- delete till here -->
     </div>
+    <div class="errorOuter" >
+      <div class="noElements" id="errorProducts">
+        NO RECORDS TO SHOW
+      </div>
+    </div>
+
 
   </div>
 

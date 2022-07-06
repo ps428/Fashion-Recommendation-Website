@@ -16,18 +16,18 @@ engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}"
 
 #app = Flask(__name__)
 
-def get_user_ids():
+def get_usernames():
     user_query=f"""
-                select user_id from users;
+                select username from users;
                """
-    user_id_array = pd.read_sql(
+    username_array = pd.read_sql(
                         user_query,
                         con=engine)
-    if user_id_array.empty:
+    if username_array.empty:
         raise ValueError("Some error")
     else:
-        print(user_id_array)
-        return user_id_array
+        json_username_array = username_array.to_json(orient ='split')
+        return json_username_array
 
 
 def get_user_scores_with_products(user_id):

@@ -44,13 +44,13 @@ body {
   display: flex;
 }
 
-.logo{
+.logo {
   height: 100%;
-  display:  flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
-.logo > img{
+.logo>img {
   margin-top: 15px;
   margin-left: 15px;
   height: 55%;
@@ -126,7 +126,26 @@ li a:hover {
   margin-left: 30px;
 }
 
+#productsDropDown {
+  margin-left: 20px;
+  width: auto;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+}
+
+#usernameDropDown {
+  margin-left: 20px;
+  width: 150px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+}
+
 button {
+  border-radius: 2px;
   border: 1px solid #ccc;
   color: rgb(255, 72, 0);
   background-color: white;
@@ -208,7 +227,7 @@ input {
   width: 95%;
 }
 
-.productImg > img {
+.productImg>img {
   width: 100%;
   /* or any custom size */
   height: 100%;
@@ -231,7 +250,7 @@ input {
   word-wrap: break-word;
 }
 
-.productQuantity{
+.productQuantity {
   text-decoration: none;
   font-size: 10px;
   color: var(--text2);
@@ -265,12 +284,12 @@ input {
   margin-bottom: 30px;
 }
 
-.table{
+.table {
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
   min-width: 600px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .table th {
@@ -281,7 +300,7 @@ input {
 
 .table th,
 .table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .table tr {
@@ -301,7 +320,7 @@ input {
   color: #009879;
 }
 
-.description{
+.description {
   text-align: center;
   padding: 20px;
 }
