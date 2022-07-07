@@ -1,0 +1,5 @@
+- [ ] Change font size for items
+- [ ] Position items ideally for the recomended products
+- [X] Add line chart instead of bar graph
+- [X] Add Artist trend
+- [X] Add Category trend

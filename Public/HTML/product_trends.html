@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   </script>
 
-  <title>Demo Home</title>
+  <title>Product Trends</title>
 </head>
 
 <body>
@@ -40,22 +40,61 @@
       <select id="productsDropDown">
         <option selected="selected">Select Product</option>
       </select>
-      <button onclick="makeChart()">Submit</button>
+      <button onclick="makeChartProducts()">Submit</button>
     </div>
 
     <div class="chartHeader">
       Product Statistics
     </div>
-    <div class="charts" id="userCharts">
+    <div class="charts" id="productCharts" style="margin-bottom: 50px;">
       <!-- delete from here -->
       <!-- delete till here -->
     </div>
-    <div class="errorOuter" >
+    <div class="errorOuterProduct" >
       <div class="noElements" id="errorProducts">
         NO RECORDS TO SHOW
       </div>
     </div>
 
+    <div class="form" style="margin-top: 60px;">
+      <select id="categoriesDropDown">
+        <option selected="selected">Select Category</option>
+      </select>
+      <button onclick="makeChartCategories()">Submit</button>
+    </div>
+
+    <div class="chartHeader" style="margin-top: 150px;">
+      Category Statistics
+    </div>
+    <div class="charts" id="categoryCharts" style="margin-bottom: 50px;">
+      <!-- delete from here -->
+      <!-- delete till here -->
+    </div>
+    <div class="errorOuterCategory" >
+      <div class="noElements" id="errorCategories">
+        NO RECORDS TO SHOW
+      </div>
+    </div>
+
+    <div class="form" style="margin-top: 60px;">
+      <select id="artistsDropDown">
+        <option selected="selected">Select Artist</option>
+      </select>
+      <button onclick="makeChartArtists()">Submit</button>
+    </div>
+
+    <div class="chartHeader" style="margin-top: 150px;">
+      Artist Statistics
+    </div>
+    <div class="charts" id="artistCharts">
+      <!-- delete from here -->
+      <!-- delete till here -->
+    </div>
+    <div class="errorOuterArtist" >
+      <div class="noElements" id="errorArtists">
+        NO RECORDS TO SHOW
+      </div>
+    </div>
 
   </div>
 

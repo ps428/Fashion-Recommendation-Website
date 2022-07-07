@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from apis.fetch_visualize_user_data import get_all_charts, get_userid, get_piecharts_data
 from apis.fetch_user_recommendations import get_user_recommendations, fetch_user_purchased_products, get_usernames
 from apis.TopN import get_topN_products,get_topN_attributes
-from apis.product_trend import get_trend, get_product_trend, get_product_names
+from apis.monthly_trend import get_category_trend, get_artist_trend, get_product_trend, get_product_names
 from flask_cors import CORS, cross_origin
 
 # create sqlalchemy engine and connect to local database
@@ -192,7 +192,6 @@ def user_personalization():
 #     else:
 #        return 'Content-Type not supported!'
 
-
 @app.route('/trending', methods=['POST'])
 def website_trend():
     """
@@ -280,14 +279,7 @@ def website_trend():
             response=data_dict
             #return json.dumps(response_dict)
             return json.dumps(response) 
-        elif functionality=='get_product_trend':
-            prod_id=json_dict['product_id']
-            #output_folder_path='/home/spanidea-168/Documents/SpanIdea_Office_work/Fashion_recommendation_prototype/results'
-            months=[1,2,3,4,5,6]
-            years=[2022]
-            #filepath=get_trend(prod_id,output_folder_path,months,years)
-            response=get_product_trend(prod_id,months,years)
-            return json.dumps(response)
+        
         else:
             return 'Invalid request!'
 
@@ -394,3 +386,28 @@ def get_all_product_names():
 
     else:
        return 'Content-Type not supported!'
+
+@app.route('/monthly-trend', methods=['POST'])
+def monthly_trend():
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json_dict = request.json
+        functionality=json_dict['func']
+        if functionality=='get_category_trend':
+            category=json_dict['category']
+            response=get_category_trend(category)
+            return json.dumps(response)
+        
+        elif functionality=='get_artist_trend':
+            artist=json_dict['artist']
+            response=get_artist_trend(artist)
+            return json.dumps(response)
+        elif functionality=='get_product_trend':
+            prod_id=json_dict['product_id']
+            response=get_product_trend(prod_id)
+            return json.dumps(response)
+        
+    else:
+        return 'Content-Type not supported!'
+
+

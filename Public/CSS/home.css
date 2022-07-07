@@ -124,20 +124,12 @@ li a:hover {
 
 .form>button {
   margin-left: 30px;
+
 }
 
-#productsDropDown {
+select {
   margin-left: 20px;
-  width: auto;
-  background-color: #fff;
-  padding: 5px;
-  border-radius: 2px;
-  border: 1px solid #ccc;
-}
-
-#usernameDropDown {
-  margin-left: 20px;
-  width: 150px;
+  width: 320px;
   background-color: #fff;
   padding: 5px;
   border-radius: 2px;
