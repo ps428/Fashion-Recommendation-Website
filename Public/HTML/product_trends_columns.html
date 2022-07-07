@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/home.css">
+  <script src="../JS/apiDealing.js"></script>
+  <script src="../JS/productTrends.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+
+  <title>Product Trends</title>
+</head>
+
+<body>
+  <div class="topbar">
+
+    <div class="right">
+      <div class="logo">
+        <img src="../Assets/SpanIdea-Logo.png">
+      </div>
+
+      <h1 class="topbarHeading">Fashion Recommendation</h1>
+      <ul>
+        <li><a href="../HTML/home.html">Home</a></li>
+        <li><a href="../HTML/website_trends.html">Website Trends</a></li>
+        <li><a class="active" href="../HTML/product_trends.html">Product Trends</a></li>
+        <li><a href="../HTML/about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="seperator"></div>
+  <div class="main">
+    <div class="monthlyTrends">
+      <div class="productTrend">
+        <div class="form">
+          <select id="productsDropDown">
+            <option selected="selected">Select Product</option>
+          </select>
+          <button onclick="makeChartProducts()">Submit</button>
+        </div>
+
+        <div class="chartHeader">
+          Product Statistics
+        </div>
+        <div class="charts" id="productCharts" style="margin-bottom: 50px;">
+          <!-- delete from here -->
+          <!-- delete till here -->
+        </div>
+        <div class="errorOuterProduct">
+          <div class="noElements" id="errorProducts">
+            NO RECORDS TO SHOW
+          </div>
+        </div>
+
+      </div>
+
+      <div class="categoryTrens">
+        <div class="form" >
+          <select id="categoriesDropDown">
+            <option selected="selected">Select Category</option>
+          </select>
+          <button onclick="makeChartCategories()">Submit</button>
+        </div>
+
+        <div class="chartHeader">
+          Category Statistics
+        </div>
+        <div class="charts" id="categoryCharts" style="margin-bottom: 50px;">
+          <!-- delete from here -->
+          <!-- delete till here -->
+        </div>
+        <div class="errorOuterCategory">
+          <div class="noElements" id="errorCategories">
+            NO RECORDS TO SHOW
+          </div>
+        </div>
+
+      </div>
+
+      <div class="artistTrend">
+        <div class="form" >
+          <select id="artistsDropDown">
+            <option selected="selected">Select Artist</option>
+          </select>
+          <button onclick="makeChartArtists()">Submit</button>
+        </div>
+
+        <div class="chartHeader" >
+          Artist Statistics
+        </div>
+        <div class="charts" id="artistCharts">
+          <!-- delete from here -->
+          <!-- delete till here -->
+        </div>
+        <div class="errorOuterArtist">
+          <div class="noElements" id="errorArtists">
+            NO RECORDS TO SHOW
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>

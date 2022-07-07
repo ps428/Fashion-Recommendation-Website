@@ -172,6 +172,16 @@ input {
   /* padding-right: 60px; */
 }
 
+
+.chartTrend {
+  height: 240px;
+  width: 100%;
+  /* margin-top: 30px; */
+  margin-bottom: 30px;
+  padding-left: 60px;
+  /* padding-right: 60px; */
+}
+
 .charts {
   display: flex;
   align-items: center;
@@ -317,4 +327,8 @@ input {
 .description {
   text-align: center;
   padding: 20px;
+}
+
+.monthlyTrends{
+  display: flex;
 }

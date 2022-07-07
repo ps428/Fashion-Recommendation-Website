@@ -325,7 +325,7 @@ function printChartArtists(artistName) {
 function makeChartProductTrends(jsonData) {
   document.getElementById('productCharts').style.height = '300px';
   document.getElementById('productCharts').innerHTML = `
-  <div class="chart">
+  <div class="chartTrend">
     <canvas id="productChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
   </div>
   `
@@ -366,7 +366,7 @@ function makeChartProductTrends(jsonData) {
 function makeChartCategoryTrends(jsonData) {
   document.getElementById('categoryCharts').style.height = '300px';
   document.getElementById('categoryCharts').innerHTML = `
-  <div class="chart">
+  <div class="chartTrend">
     <canvas id="categoryChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
   </div>
   `
@@ -405,7 +405,7 @@ function makeChartCategoryTrends(jsonData) {
 function makeChartArtistTrends(jsonData) {
   document.getElementById('artistCharts').style.height = '300px';
   document.getElementById('artistCharts').innerHTML = `
-  <div class="chart">
+  <div class="chartTrend">
     <canvas id="artistChart" style="width: 85%; height: 300px;display: inline-block;"></canvas>
   </div>
   `
