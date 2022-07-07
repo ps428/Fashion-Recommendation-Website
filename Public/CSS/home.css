@@ -190,8 +190,10 @@ input {
 
 .flex-container {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   padding-left: 8%;
+  justify-content: center;
   padding-right: 8%;
 }
 
@@ -201,7 +203,7 @@ input {
   padding: 20px;
   margin: 5px;
   margin-bottom: 15px;
-  height: 240px;
+  height: 340px;
   width: 170px;
   background-color: var(--bg2);
   /* box-shadow: 2px 2px 1px 2px; */
@@ -229,14 +231,14 @@ input {
 .productId {
   margin-top: 20px;
   text-decoration: none;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text2);
   display: block;
 }
 
 .productTitle {
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--text2);
   display: block;
   word-wrap: break-word;
@@ -244,7 +246,7 @@ input {
 
 .productQuantity {
   text-decoration: none;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text2);
   display: block;
 }
