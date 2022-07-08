@@ -155,7 +155,7 @@ function makePie(jsonData) {
 
       title: {
         display: true,
-        text: "Artist Preferences"
+        text: "Character/Movies Preferences"
       }
     }
   });
@@ -368,7 +368,7 @@ function sendUserID(typeOfData, productID = "") {
         <table class="table">
           <tr>
             <th>S.No</th>
-            <th>Artist Name</th>
+            <th>Character/Movies Name</th>
             <th>Total Quantity</th>
           </tr>
         `

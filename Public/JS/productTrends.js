@@ -43,7 +43,7 @@ function addProductsDropDown() {
     for (const product of data.data) {
       productString = product[0]
       //can make custom product name from here
-      productString = productString.replace(',',', ')
+      productString = productString.replaceAll(',',' ')
       productData.push([productString,product[1]])
       var option = document.createElement("option");
       option.value = productString;
@@ -169,7 +169,7 @@ function makeChartProducts(){
     return
   }
   const productID = getProductID(productName)
-  printChartProducts(productID)
+  printChartProducts(productID, productName)
 }
 
 function makeChartCategories(){
@@ -227,7 +227,7 @@ function getProductID(productName){
   return productID
 }
 
-function printChartProducts(productID) {
+function printChartProducts(productID, productName) {
   // curl -X POST -H "Content-type: application/json" -d "{\"func\" : \"get_product_trend\",\"product_id\":\"1\"}" "localhost:8000/monthly-trend" 
   endpoint = "http://localhost:8000/monthly-trend";
   // API for get requests
@@ -250,7 +250,7 @@ function printChartProducts(productID) {
 
   fetchRes.then(res => res.json()).then((data) => {
     let parentDiv = "";
-    makeChartProductTrends(data)
+    makeChartProductTrends(data, productName)
 
     // parentDiv = makeItemContainerTrending(parentDiv, data);
     // document.getElementById("topProducts").innerHTML = parentDiv;
@@ -281,7 +281,7 @@ function printChartCategories(categoryName) {
 
   fetchRes.then(res => res.json()).then((data) => {
     let parentDiv = "";
-    makeChartCategoryTrends(data)
+    makeChartCategoryTrends(data, categoryName)
 
     // parentDiv = makeItemContainerTrending(parentDiv, data);
     // document.getElementById("topProducts").innerHTML = parentDiv;
@@ -313,7 +313,7 @@ function printChartArtists(artistName) {
 
   fetchRes.then(res => res.json()).then((data) => {
     let parentDiv = "";
-    makeChartArtistTrends(data)
+    makeChartArtistTrends(data, artistName)
 
     // parentDiv = makeItemContainerTrending(parentDiv, data);
     // document.getElementById("topProducts").innerHTML = parentDiv;
@@ -322,7 +322,7 @@ function printChartArtists(artistName) {
 }
 
 
-function makeChartProductTrends(jsonData) {
+function makeChartProductTrends(jsonData, productName) {
   document.getElementById('productCharts').style.height = '300px';
   document.getElementById('productCharts').innerHTML = `
   <div class="chartTrend">
@@ -362,14 +362,14 @@ function makeChartProductTrends(jsonData) {
       legend: { display: false },
       title: {
         display: true,
-        text: "Product Trends"
+        text: `Monthly Trends for Product: ${productName}`
       }
     }
   });
 }
 
 
-function makeChartCategoryTrends(jsonData) {
+function makeChartCategoryTrends(jsonData, categoryName) {
   document.getElementById('categoryCharts').style.height = '300px';
   document.getElementById('categoryCharts').innerHTML = `
   <div class="chartTrend">
@@ -408,14 +408,14 @@ function makeChartCategoryTrends(jsonData) {
       legend: { display: false },
       title: {
         display: true,
-        text: "Category Trends"
+        text: `Monthly Trends for ${categoryName}`
       }
     }
   });
 }
 
 
-function makeChartArtistTrends(jsonData) {
+function makeChartArtistTrends(jsonData, artistName) {
   document.getElementById('artistCharts').style.height = '300px';
   document.getElementById('artistCharts').innerHTML = `
   <div class="chartTrend">
@@ -454,7 +454,7 @@ function makeChartArtistTrends(jsonData) {
       legend: { display: false },
       title: {
         display: true,
-        text: "Character/Movies Trends"
+        text: `Monthly Trends for ${artistName} Products`
       }
     }
   });
