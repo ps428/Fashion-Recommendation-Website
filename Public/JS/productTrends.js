@@ -348,11 +348,17 @@ function makeChartProductTrends(jsonData) {
       datasets: [{
         backgroundColor: barColors,
         data: yValues,
+        borderColor: '#A9A9A9',
         fill:false,
         hoverBackgroundColor: "Black"
       }]
     },
     options: {
+      elements: {
+        line: {
+            tension: 0
+        }
+    },
       legend: { display: false },
       title: {
         display: true,
@@ -388,11 +394,17 @@ function makeChartCategoryTrends(jsonData) {
       labels: xValues,
       datasets: [{
         backgroundColor: barColors,
+        borderColor: '#A9A9A9',
         fill: false,
         data: yValues
       }]
     },
     options: {
+      elements: {
+        line: {
+            tension: 0
+        }
+    },
       legend: { display: false },
       title: {
         display: true,
@@ -428,11 +440,17 @@ function makeChartArtistTrends(jsonData) {
       labels: xValues,
       datasets: [{
         backgroundColor: barColors,
+        borderColor: '#A9A9A9',
         fill:false,
         data: yValues
       }]
     },
     options: {
+      elements: {
+        line: {
+            tension: 0
+        }
+    },
       legend: { display: false },
       title: {
         display: true,
