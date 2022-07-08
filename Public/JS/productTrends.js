@@ -203,7 +203,7 @@ function makeChartArtists(){
     noValue.parentElement.removeChild(noValue)
   }
 
-  if(artistName=='Select Artist'){
+  if(artistName=='Select Character/Movies'){
     document.getElementById('artistCharts').innerHTML = ""
     document.getElementById('artistCharts').style.height = '0px';
 
@@ -388,6 +388,7 @@ function makeChartCategoryTrends(jsonData) {
       labels: xValues,
       datasets: [{
         backgroundColor: barColors,
+        fill: false,
         data: yValues
       }]
     },
@@ -427,6 +428,7 @@ function makeChartArtistTrends(jsonData) {
       labels: xValues,
       datasets: [{
         backgroundColor: barColors,
+        fill:false,
         data: yValues
       }]
     },
@@ -434,7 +436,7 @@ function makeChartArtistTrends(jsonData) {
       legend: { display: false },
       title: {
         display: true,
-        text: "Artist Trends"
+        text: "Character/Movies Trends"
       }
     }
   });
