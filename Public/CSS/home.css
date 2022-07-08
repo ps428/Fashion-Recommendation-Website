@@ -56,7 +56,7 @@ body {
   height: 55%;
 }
 
-ul {
+.head {
   list-style-type: none;
   align-items: center;
   margin: 0;
@@ -67,11 +67,11 @@ ul {
   display: flex;
 }
 
-li {
+.head > li {
   padding-left: 10px;
 }
 
-li a {
+.head > li a {
   display: block;
   text-align: center;
   padding: 14px 16px;
@@ -81,12 +81,12 @@ li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+.head > li a:hover {
   color: rgb(255, 72, 0);
 
 }
 
-.active {
+.head .active {
   color: rgb(255, 72, 0);
 }
 
@@ -331,4 +331,17 @@ input {
 
 .monthlyTrends{
   display: flex;
+}
+
+.outerDescription{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.description{
+  width: 70%;
+  text-align:start;
+  /* flex-wrap: wrap; */
 }

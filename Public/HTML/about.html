@@ -7,12 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/home.css">
   <script src="../JS/apiDealing.js"></script>
- 
+
   <!-- latex -->
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+    integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+    integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+    integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
@@ -28,9 +33,9 @@
       <div class="logo">
         <img src="../Assets/SpanIdea-Logo.png">
       </div>
-    
+
       <h1 class="topbarHeading">Fashion Recommendation</h1>
-      <ul>
+      <ul class="head">
         <li><a href="../HTML/home.html">Home</a></li>
         <li><a href="../HTML/website_trends.html">Website Trends</a></li>
         <li><a href="../HTML/product_trends.html">Product Trends</a></li>
@@ -41,18 +46,90 @@
 
   <div class="seperator"></div>
   <div class="main">
-    <div class="description">Description here</div>
+    <div class="outerDescription">
+      <div class="description">
+      <!-- you may add description here -->
+        <p><br></p>
+        <p>Imagine a user has logged in to your E-commerce website to buy a T-shirt and your website is showing hundreds
+          of T-shirt to that user.</p>
+        <p>There can be multiple responses here:</p>
+        <ol>
+          <li>
+            <p>The <strong>user is overwhelmed</strong> by the information and could not decide what to buy!!&nbsp;</p>
+          </li>
+          <li>
+            <p>User has suddenly got some important work and <strong>do not have much time</strong> to scroll products,
+              so he/she left
+            </p>
+          </li>
+          <li>
+            <p>User got <strong>bored of scrolling</strong> a lot!</p>
+          </li>
+        </ol>
+        <p>beacuse of these reasons it becomes difficult to convert a user search to transaction.</p>
+        <p><br></p>
+        <p>Hence AI based Recommendation system comes into the picture. It helps retriving those products which are more
+          likely to be liked by the user in future, based on their past purchase and viewing history.</p>
+        <p>Recommendation Engine decides to each user what to show? and when to show?</p>
+        <p>It enhances user expierience since it is highly probable that they see what they wanted!&nbsp;</p>
+        <p>This boost sales of the E-commerce industry and decreases Churn rate, Cart abandonment rate, Bounce rate of
+          the
+          E-commerce website.</p>
+        <p><br></p>
+        <p>Moreover, along with the past purchase history. Recommendation system might take into account location,
+          seasons
+          and festivals , explicit feedback by costumer etc. for enhanced recommendations for user.</p>
+        <p><br></p>
+        <p>This is a prototype of E-commerce based recommendation system where data used of Fashion industry and can be
+          generalized for the use case of any industry.</p>
+        <p>Dataset:</p>
+        <ul>
+          <li>
+            <p>Details of 88 products</p>
+          </li>
+          <li>
+            <p>Purchase history of 100 users</p>
+          </li>
+        </ul>
+        <p><br></p>
+        <p>In this dataset each product has a category, a character/movie and a theme associated with it. Hence, these
+          are
+          the product attributes considered for this application.</p>
+        <p>Based on the past purchase history of an user, an interaction score is predicted with each product that is
+          not
+          purchased by that user in past. Based on this predicted score&nbsp;</p>
+        <p>the products are ranked to show recommendations to user.</p>
+        <p><br></p>
+        <p>Following is the mathemetical equation used to predict score for user-u and product-p:</p>
+        <p><br></p>
+
+        <!-- don't add anything beyond this tag -->
+      </div>
+    </div>
 
     \[\Large\textbf{Mathematical Equation}\]
-    \[\hat{p}_{up}=\frac{1}{n} [\sum f^{1}_{u} \cdot f^{1}_{p} + \sum f^{2}_{u} \cdot f^{2}_{p}  + ... + \sum   f^{n}_{u} \cdot f^{n}_{p}]\]
-    \[where,\] 
-    \[\hat{p}_{up} = predicted \ score \ of \  user \ u \ with \  product \ p\]
+    \[\hat{p}_{up}=\frac{1}{n} [\sum f^{1}_{u} \cdot f^{1}_{p} + \sum f^{2}_{u} \cdot f^{2}_{p} + ... + \sum f^{n}_{u}
+    \cdot f^{n}_{p}]\]
+    \[where,\]
+    \[\hat{p}_{up} = predicted \ score \ of \ user \ u \ with \ product \ p\]
     \[ p = product\]
     \[u = user\]
     \[f^{i}_{u} = i^{th} \ attribute \ feature \ vector \ for \ user \ u\]
-    \[f^{i}_{p} =  i^{th} \ attribute \ feature \ vector \ for \ product \ p \]
-    \[n= number \ of \ product \ attributes \ considered.\]  
-    <div class="description">Description here</div>
+    \[f^{i}_{p} = i^{th} \ attribute \ feature \ vector \ for \ product \ p \]
+    \[n= number \ of \ product \ attributes \ considered.\]
+
+    <div class="outerDescription">
+      <div class="description">
+        <!-- you may add the description here -->
+        <p><br></p>
+        <p>In this case we have considered 3 product attributes i.e,</p>
+        <p>(1)Category</p>
+        <p>(2)Fictional Character/Movie the product belongs to</p>
+        <p>(3)Theme of the product.</p>
+        <p><br></p>
+        <!-- don't add anything beyond this tag -->
+      </div>
+    </div>
   </div>
 
 </body>

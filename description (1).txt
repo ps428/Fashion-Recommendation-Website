@@ -1,0 +1,35 @@
+Description-1
+
+Imagine a user has logged in to your E-commerce website to buy a T-shirt and your website is showing hundreds of T-shirt to that user.
+There can be multiple responses here:
+1)the user is overwhelmed by the information and could not decide what to buy!! 
+2)user has suddenly got some important work and do not have much time to scroll products, so he/she left
+3)user got bored of scrolling a lot!
+beacuse of these reasons it becomes difficult to convert a user search to transaction.
+
+Hence AI based Recommendation system comes into the picture. It helps retriving those products which are more likely to be liked by the user in future, based on their past purchase and viewing history.
+Recommendation Engine decides to each user what to show? and when to show?
+It enhances user expierience since it is highly probable that they see what they wanted! 
+This boost sales of the E-commerce industry and decreases Churn rate, Cart abandonment rate, Bounce rate of the E-commerce website.
+
+Moreover, along with the past purchase history. Recommendation system might take into account location, seasons and festivals , explicit feedback by costumer etc. for enhanced recommendations for user.
+
+This is a prototype of E-commerce based recommendation system where data used of Fashion industry and can be generalized for the use case of any industry.
+Dataset:
+*Details of 88 products
+*Purchase history of 100 users
+
+In this dataset each product has a category, a character/movie and a theme associated with it. Hence, these are the product attributes considered for this application.
+Based on the past purchase history of an user, an interaction score is predicted with each product that is not purchased by that user in past. Based on this predicted score 
+the products are ranked to show recommendations to user.
+
+Following is the mathemetical equation used to predict score for user-u and product-p:
+
+________Equation image_________
+
+Description-2
+
+In this case we have considered 3 product attributes i.e,
+(1)Category
+(2)Fictional Character/Movie the product belongs to
+(3)Theme of the product.
